@@ -1,0 +1,32 @@
+.btn {
+    min-width: 5.385em;
+    height: 2.308em;
+    border: none;
+    border-radius: 0.308em;
+    background: #6F6EFF;
+    text-align: center;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.btn:hover {
+    background: #2f2fff;
+    transition: all 0.4s ease-in;
+}
+
+.btn span {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+.btn--delete {
+    background: #ff493858;
+    transition: all 0.4s ease-in;
+}
+
+.btn--delete:hover {
+    background: #FF4738;
+}

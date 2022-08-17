@@ -3,8 +3,10 @@
     background: rgba(156, 165, 236, 0.04);
 }
 .nav {
+    grid-column: 1 / 1;
     width: 280px;
     padding: 30px;
+    background: rgba(156, 165, 236, 0.04);
 }
 .nav__list a {
     display: flex;

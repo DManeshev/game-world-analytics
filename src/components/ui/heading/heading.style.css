@@ -20,3 +20,13 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+
+.main__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 18px;
+    color: #FFFFFF;
+    padding-bottom: 25px;
+}

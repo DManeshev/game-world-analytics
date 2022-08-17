@@ -15,10 +15,35 @@ a {
 }
 
 .wrapper {
-    max-width: 1440px;
+    max-width: 2000px;
     height: 100vh;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: 90px;
+    background: #2B2C3A;
+}
+
+.main {
+    padding: 40px 50px;
+    border-top: 1px solid rgb(216, 216, 216, 0.1);
+    overflow-y: scroll;
+}
+.main::-webkit-scrollbar {
+    width: 5px;
+}
+.main::-webkit-scrollbar-thumb {
+    background: rgba(156, 165, 236);
+    border-radius: 6px;
+}
+.main::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 165, 236, 0.3);
+}
+
+.cards__games { 
     display: flex;
     align-items: flex-start;
-    background: #2B2C3A;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }

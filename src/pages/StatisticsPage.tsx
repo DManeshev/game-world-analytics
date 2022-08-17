@@ -1,7 +1,11 @@
+import Heading from "../components/ui/heading/Heading";
+
 const StatisticsPage = () => {
 
     return (
-        <div>Statistics</div>
+        <>
+            <Heading title='Statistics' />
+        </>
     )
 }
 
