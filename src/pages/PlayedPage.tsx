@@ -6,6 +6,7 @@ import { deletePlayedGame } from "../store/rawg/rawg.slice";
 import Heading from "../components/ui/heading/Heading";
 import Card from "../components/ui/cardGame/Card";
 import Button from '../components/ui/button/Button';
+import Stub from "../components/ui/stub/Stub";
 
 import '../components/ui/cardGame/card.style.css';
 
@@ -15,33 +16,33 @@ const PlayedPage = () => {
 
     const dispatch = useAppDispatch();
 
-    const handleDeleteGame = (event: MouseEvent, id: number) => {
-        dispatch(deletePlayedGame(id))
-    }
+    const handleDeleteGame = (event: MouseEvent, id: number) => dispatch(deletePlayedGame(id))
 
     return (
         <>
             <Heading title="Played Games" />
 
+            { playedGames.length === 0 && <Stub />}
+
             <div className="cards__games">
                 {playedGames && playedGames.map(game => 
                     <Card key={game.id}>
                         <img className='card__img' src={game.background_image} alt={game.slug} />
-                            <div className='card__label'>
-                                <div className='card__logo'>{game.name}</div>
-                            </div>
-                            <a 
-                                href={game.website}
-                                className="card__link"
-                                target="_blank">
-                                {game.website}
-                            </a>
-                            <div className='card__footer'> 
-                                <Button 
-                                    title="Delete"
-                                    className="btn--delete"
-                                    handleClick={event => handleDeleteGame(event, game.id)} />
-                            </div>
+                        <div className='card__label'>
+                            <div className='card__logo'>{game.name}</div>
+                        </div>
+                        <a 
+                            href={game.website}
+                            className="card__link"
+                            target="_blank">
+                            {game.website}
+                        </a>
+                        <div className='card__footer'> 
+                            <Button 
+                                title="Delete"
+                                className="btn--delete"
+                                handleClick={event => handleDeleteGame(event, game.id)} />
+                        </div>
                     </Card>
                 )}
             </div>
