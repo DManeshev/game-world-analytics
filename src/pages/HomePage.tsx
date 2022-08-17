@@ -1,12 +1,13 @@
 import { MouseEvent, useState, useEffect } from 'react';
 import { useGetGamesQuery, useGetGameQuery } from '../store/rawg/rawg.api';
 
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
+import { useAppDispatch } from '../hooks/hooks';
 import { addPlayedGame } from '../store/rawg/rawg.slice';
 
 import Heading from "../components/ui/heading/Heading";
 import Card from '../components/ui/cardGame/Card';
 import Button from '../components/ui/button/Button';
+import Loader from '../components/loader/Loader';
 
 import '../components/ui/cardGame/card.style.css';
 
@@ -39,7 +40,7 @@ const HomePage = () => {
         <>
             <Heading title='Games' />
 
-            { isLoading && <h2>Загрузка</h2>}
+            { isLoading && <Loader />}
 
             <div className="cards__games">
                 { data?.map(item => 

@@ -6,7 +6,7 @@ const Loader = () => {
 
     return (
         <div className="loader">
-            <img src={loader} alt="loader svg" />
+            <img src={loader} alt="loader svg"  className="loader__svg"/>
         </div>
     )
 }
