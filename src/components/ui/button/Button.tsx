@@ -1,5 +1,4 @@
-import { useState, MouseEvent, forwardRef } from 'react';
-import { useAppSelector } from '../../../hooks/hooks';
+import { MouseEvent, forwardRef } from 'react';
 
 import './button.style.css';
 

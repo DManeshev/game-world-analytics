@@ -6,7 +6,7 @@ import { deletePlayedGame } from "../store/rawg/rawg.slice";
 import Heading from "../components/ui/heading/Heading";
 import Card from "../components/ui/cardGame/Card";
 import Button from '../components/ui/button/Button';
-import Stub from "../components/ui/stub/Stub";
+import Stub from "../components/stub/Stub";
 
 import '../components/ui/cardGame/card.style.css';
 

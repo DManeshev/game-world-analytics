@@ -8,6 +8,7 @@ import Heading from "../components/ui/heading/Heading";
 import Card from '../components/ui/cardGame/Card';
 import Button from '../components/ui/button/Button';
 import Loader from '../components/loader/Loader';
+import Error from '../components/error/Error';
 
 import '../components/ui/cardGame/card.style.css';
 
@@ -17,11 +18,10 @@ const HomePage = () => {
 
     const [ id, setId ] = useState<number | null>(null);
 
-
-    const { data = [], isLoading, isError } = useGetGamesQuery();
+    const { data = [], isLoading, error } = useGetGamesQuery();
 
     const { data: game } = useGetGameQuery(id, {
-        skip: id === null,
+        skip: !id,
     });
 
     const dispatch = useAppDispatch();
@@ -35,6 +35,15 @@ const HomePage = () => {
             dispatch(addPlayedGame(game))
         }
     }, [game])
+
+    if (error) {
+        if ('status' in error) {
+            const errMsg = 'data' in error ? JSON.stringify(error.data) : error.error;
+            const statusNum = 'originalStatus' in error ? error.originalStatus : null;
+
+            return <Error message={errMsg} status={statusNum} />
+        }
+    }
 
     return (
         <>
@@ -77,8 +86,6 @@ const HomePage = () => {
                     </Card>
                 )}
             </div>
-
-            { isError && <h2>Ошибка...</h2> }
         </>
     )
 }
