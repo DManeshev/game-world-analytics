@@ -30,3 +30,12 @@
     color: #FFFFFF;
     padding-bottom: 25px;
 }
+
+.stat__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(255, 255, 255, 0.5);
+    padding-bottom: 20px;
+}

@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import './heading.style.css';
+
 const StatLabel:FC<{label: string}> = ({ label }) => {
 
     return (

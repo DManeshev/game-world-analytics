@@ -1,0 +1,29 @@
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(156, 165, 236, 0.04);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.stat__descr {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.stat__value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #6F6EFF;
+}
+
+.stat__bar {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    width: 840px;
+    padding: 20px 0px;
+}

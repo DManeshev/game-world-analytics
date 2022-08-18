@@ -1,59 +1,11 @@
 import { useGetGamesQuery } from '../store/rawg/rawg.api';
 
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-
 import Heading from "../components/ui/heading/Heading";
-import StatLabel from "../components/ui/heading/StatLabel";
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Tooltip,
-);
-
-export const options = {
-    responsive: true,
-    plugins: { 
-        tooltip: {
-            yAlign: 'bottom',
-            displayColors: false,
-            backgroundColor: '#fff',
-            titleColor: '#000',
-            bodyAlign: 'center',
-            bodyColor: '#000',
-            bodyFont: {
-                size: 12
-            },
-        }
-    },
-    scales: {
-        x: {
-            grid: {
-                display: false,
-                drawBorder: false
-            },
-            ticks: {
-                font: {
-                    family:'Roboto',
-                    size: 7,
-                    weight: 600,
-                },
-                color: 'white', 
-            }
-        },
-        y: {
-            grid: {
-                display: false,
-                drawBorder: false
-            },
-            ticks: {
-                display: false
-            }
-        }
-    },
-};
+import StatBar from '../components/statistic/StatBar';
+import StatTag from '../components/statistic/StatTag';
+import StatMeta from '../components/statistic/StatMeta';
+import StatDate from '../components/statistic/StatDate';
 
 const StatisticsPage = () => {
 
@@ -61,32 +13,22 @@ const StatisticsPage = () => {
 
     let labels: string[] = [];
 
-    data.slice(0, 8).forEach(item => labels.push(item.name))
+    const NUMBER_OF_SLICE = 8;
 
-    const stat = {
-        labels,
-        datasets: [{
-            label: '',
-            data: data.map(item => item.reviews_count),
-            backgroundColor: '#6F6EFF',
-            barThickness: 50,
-            borderRadius: 15,
-            borderSkipped: false,
-        }],
-    }
-
-    console.log(data)
-
+    data.slice(0, NUMBER_OF_SLICE).forEach(item => labels.push(item.name));
+    
     return (
         <>
             <Heading title='Statistics' />
 
-            <div className='stat__bar'>
-                <StatLabel label='Review on RAWG.IO' />
-                {/* @ts-ignore*/}
-                <Bar options={options} data={stat}/>
+            <div className='stat__container'>
+                <StatDate data={data} />
+                <StatMeta data={data} />
+                <StatTag data={data} />
+                <StatBar 
+                    labels={labels}
+                    data={data} />
             </div>
-
         </>
     )
 }
