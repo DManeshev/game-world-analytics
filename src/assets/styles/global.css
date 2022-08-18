@@ -47,3 +47,18 @@ a {
     gap: 20px;
     justify-content: space-between;
 }
+
+.stat__bar {
+    width: 840px;
+    background: rgba(156, 165, 236, 0.04);
+    padding: 20px 0px;
+    border-radius: 15px;
+}
+.stat__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(255, 255, 255, 0.5);
+    padding-left: 33px;
+}
