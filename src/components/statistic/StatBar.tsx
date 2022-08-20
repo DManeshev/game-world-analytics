@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import StatCard from './StatCard';
+import StatCard from '../ui/cardGame/StatCard';
 import StatLabel from "../ui/heading/StatLabel";
 
 import { optionsBar } from './options';

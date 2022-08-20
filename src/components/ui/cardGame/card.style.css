@@ -110,3 +110,56 @@
 .card__link:hover {
     opacity: 1;
 }
+
+
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(156, 165, 236, 0.04);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.stat--justify {
+    justify-content: flex-start;
+}
+.stat__descr {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.stat__value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #6F6EFF;
+}
+
+.stat__bar {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    width: 840px;
+    padding: 20px 0px;
+}
+.stat__select {
+    margin-bottom: 6rem;
+    border: 1px solid #6F6EFF;
+    border-radius: 5px;
+    padding: 10px;
+    background: #2B2C3A;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+.stat__select:hover {
+    border: 1px solid #fc6076;
+    transition: 0.4s ease-in;
+}
+.stat__select:focus {
+    outline: 1px solid #fc6076;
+    border-color:#fc6076;
+}

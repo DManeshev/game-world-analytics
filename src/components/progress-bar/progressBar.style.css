@@ -1,0 +1,43 @@
+.circle-wrap {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #2B2C3A;
+    border-radius: 50%;
+    border: 1px solid rgba(156, 165, 236, 0.04);
+}
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.mask .fill {
+    clip: rect(0px, 100px, 200px, 0px);
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 200px, 200px, 100px);
+}
+
+.circle-wrap .inside-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2B2C3A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #6F6EFF;
+}

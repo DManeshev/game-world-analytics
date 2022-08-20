@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import StatCard from "./StatCard";
+import StatCard from "../ui/cardGame/StatCard";
 import StatLabel from "../ui/heading/StatLabel";
 
 import { IGame } from '../../models/models';

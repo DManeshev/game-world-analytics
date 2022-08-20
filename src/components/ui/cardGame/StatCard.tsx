@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
-import './statistic.style.css';
+
+import './card.style.css';
 
 type CardProps = {
     children: ReactNode,

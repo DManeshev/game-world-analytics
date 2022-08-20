@@ -23,6 +23,13 @@ export interface IScreen {
     image: string;
 }
 
+export interface IRating {
+    id: number;
+    title: string;
+    count: number;
+    percent: number;
+}
+
 export interface IGame {
     id: number;
     slug: string;
@@ -33,7 +40,7 @@ export interface IGame {
     background_image: string;
     rating: number;
     rating_top: number;
-    ratings: object;
+    ratings: IRating[];
     ratings_count: number;
     reviews_count: number;
     reviews_text_count: number;
